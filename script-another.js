@@ -1,4 +1,3 @@
-<script>
 var date = new Date();
 var end=false;
 var pause=false;
@@ -164,5 +163,3 @@ xmlhttp.open(
   "https://api.github.com/repos/nathanael-bonamie/txtFile/contents/how.txt",
   false);
 xmlhttp.send();
-
-</script>

@@ -1,0 +1,18 @@
+p {
+  text-align: center;
+  font-size: 90px;
+  margin-top: 130px;
+}
+/* Customizable font and colors */
+html {
+	background: #000000;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #FF0000;
+}
+.color-green{
+    color: #0F0;
+}
+.color-blue{
+    color: #09F;
+}

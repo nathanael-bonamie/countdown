@@ -154,6 +154,10 @@ xmlhttp.onreadystatechange = function () {
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;
+		case content.startsWith("Chômage"):
+		sessionStorage.setItem("howStart",7);
+		sessionStorage.setItem("txt",content);
+		break;
 	}
   }
 };

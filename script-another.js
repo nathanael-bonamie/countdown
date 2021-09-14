@@ -35,7 +35,7 @@ var x = setInterval(function() {
     
   // display holidays 
   if (sessionStorage.getItem("howStart")==7){
-	document.getElementById("demo").style.fontSize("25 px");
+	document.getElementById("demo").style.fontSize="25 px";
 	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
 	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";}

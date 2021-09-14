@@ -37,7 +37,7 @@ var x = setInterval(function() {
   if (sessionStorage.getItem("howStart")==7){
 	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("jusqu'au")+5)
-	+"<br>"+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("jusqu'au")+5)+"</span>";}
+	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("jusqu'au")+5)+"</span>";}
 	
   else if ((dt.getDay()>5 && sessionStorage.getItem("howStart")!=7) || (dt.getDay()==0 && sessionStorage.getItem("howStart")!=7)){
   	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+

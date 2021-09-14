@@ -150,11 +150,11 @@ xmlhttp.onreadystatechange = function () {
 		sessionStorage.setItem("howStart",720);
 		sessionStorage.setItem("txt","44 heures");
 		break;
-		case content.startsWith("Holidays"):
+		case content.startsWith("Ho"):
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;
-		case content.startsWith("Chômage"):
+		case content.startsWith("Ch"):
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;

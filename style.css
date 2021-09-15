@@ -1,8 +1,9 @@
 p {
-  font-size = "90 px";
-  height: auto; 
-  text-align: center;
-  margin : auto;
+  width: 100vw;
+    margin: auto;
+    position: absolute;
+    top:0;bottom:0; /* vertical center */
+    left:0;right:0; /* horizontal center */
 }
 .sanssautdeligne { 
 	white-space:nowrap; 

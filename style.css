@@ -1,7 +1,11 @@
 p {
-  font-size : 90px;
-  text-align: center;
-  margin: auto;
+  font-size: 9vw;
+	text-align: center;
+	margin-bottom : auto;
+	margin-top : auto;
+	margin-left : "0px";
+	margin-right : "0px";
+	width: 100%;
 }
 .sanssautdeligne { 
 	white-space:nowrap; 

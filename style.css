@@ -1,5 +1,6 @@
 p {
   text-align: center;
+  margin: auto;
 }
 .sanssautdeligne { 
 	white-space:nowrap; 

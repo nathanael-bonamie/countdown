@@ -1,6 +1,5 @@
 p {
-  font-size: 3vw;
-  font-size: 3vh;
+  width: 100%;
   text-align: center;
   margin : auto;
 }

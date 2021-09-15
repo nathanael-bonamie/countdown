@@ -7,18 +7,29 @@ p {
 	margin-right : "0px";
 	width: 100%;
 }
+
 .sanssautdeligne { 
 	white-space:nowrap; 
 }
+
 html {
 	background: #000000;
 	font-family: Calibri;
 	font-weight: bold;
 	color: #FF0000;
 }
+
+body {
+	display:flex;
+	height:100%; 
+	margin:0; 
+	padding:0; 
+}
+
 .color-green{
     color: #0F0;
 }
+
 .color-blue{
     color: #09F;
 }

@@ -1,6 +1,6 @@
 p {
   font-size = "90 px";
-  width: 100%;
+  height: auto; 
   text-align: center;
   margin : auto;
 }

@@ -139,8 +139,9 @@ xmlhttp.onreadystatechange = function () {
 	var sha=JSON.parse(this.responseText).sha;
 	sessionStorage.setItem("sha",sha);
 	
-	var content=atob(JSON.parse(this.responseText).content);
-
+	var content=atob(JSON.parse(this.responseText).content);	//fixedstring = decodeURIComponent(escape(utfstring));
+	content=decodeURIComponent(escape(content));
+	  
 	switch(true) {
 		case content.startsWith("39 heures"):
 		sessionStorage.setItem("howStart",750);

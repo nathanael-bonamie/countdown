@@ -165,6 +165,6 @@ xmlhttp.onreadystatechange = function () {
 
 xmlhttp.open(
   "GET",
-  "https://api.github.com/repos/nathanael-bonamie/txtFile/contents/how.txt",
+  "https://api.github.com/repos/nathanael-bonamie/countdown/contents/how.txt",
   false);
 xmlhttp.send();

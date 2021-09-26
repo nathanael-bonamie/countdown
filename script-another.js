@@ -54,7 +54,7 @@ var x = setInterval(function() {
 		dt.getDay()>4 ? document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 		"<span class='color-green'>Week-end</span>" : 
 		document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-		"Shift ended";
+		"<span class='color-green'>Fin de journée</span>";
 	}
 	}
   
@@ -151,7 +151,7 @@ xmlhttp.onreadystatechange = function () {
 		sessionStorage.setItem("howStart",720);
 		sessionStorage.setItem("txt","44 heures");
 		break;
-		case content.startsWith("Ho"):
+		case content.startsWith("Cong"):
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;

@@ -16,11 +16,10 @@ var x = setInterval(function() {
   var h=t.getHours();
   var m=t.getMinutes();
   var s=t.getSeconds();
-  // Fdebutd the distance between now and the count down date
+
   var distance = countDownDate - now;
     
   // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -136,8 +135,8 @@ xmlhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
   
     //let data = JSON.parse(this.responseText).feed.entry;
-	var sha=JSON.parse(this.responseText).sha;
-	sessionStorage.setItem("sha",sha);
+	//var sha=JSON.parse(this.responseText).sha;
+	//sessionStorage.setItem("sha",sha);
 	
 	var content=atob(JSON.parse(this.responseText).content);	//fixedstring = decodeURIComponent(escape(utfstring));
 	content=decodeURIComponent(escape(content));

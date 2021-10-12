@@ -162,6 +162,10 @@ xmlhttp.onreadystatechange = function () {
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;
+		case content.startsWith("Rtt"):
+		sessionStorage.setItem("howStart",6);
+		sessionStorage.setItem("txt",content);
+		break;
 	}
   }
 };

@@ -42,7 +42,7 @@ var x = setInterval(function() {
 	"<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
 	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";}
 	
-  else if ((dt.getDay()>5 && sessionStorage.getItem("howStart")!=7) || (dt.getDay()==0 && sessionStorage.getItem("howStart")!=7)){
+  else if ((dt.getDay()>5 && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) || (dt.getDay()==0 && sessionStorage.getItem("howStart")!=7)){
   	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>Week-end</span>";
 	}
@@ -53,7 +53,7 @@ var x = setInterval(function() {
 		"Reload";
 		setcount();
 	}
-	else if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7) {
+	else if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) {
 		dt.getDay()>4 ? document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 		"<span class='color-green'>Week-end</span>" : 
 		document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+

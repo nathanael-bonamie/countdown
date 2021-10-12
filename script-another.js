@@ -33,7 +33,11 @@ var x = setInterval(function() {
 	(1>hours ? "" : hours + ":")+(10>minutes ? "0" : "") + minutes + ":" + (10>seconds ? "0" : "") + seconds;}
     
   // affichage congés ou chômage
-  if (sessionStorage.getItem("howStart")==7){
+  if (sessionStorage.getItem("howStart")==6){
+	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	"<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";}
+	
+  else if (sessionStorage.getItem("howStart")==7){
 	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
 	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";}

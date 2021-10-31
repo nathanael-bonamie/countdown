@@ -5,7 +5,14 @@ var dt;
 var d;
 var countDownDate;
 var debut=sessionStorage.getItem("howStart");
+var week_end;
 
+if(dt.getDay()>5 || dt.getDay()==0){
+	week_end=true;
+}
+else{
+	week_end=false;
+}
 setcount();
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -32,20 +39,22 @@ var x = setInterval(function() {
 	document.getElementById("demo").innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	(1>hours ? "" : hours + ":")+(10>minutes ? "0" : "") + minutes + ":" + (10>seconds ? "0" : "") + seconds;}
     
-  // affichage congés ou chômage
-  if (sessionStorage.getItem("howStart")==6){
+  // affichage congés, chômage ou week end
+  if (week_end){
+  	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	"<span class='color-green'>Week-end</span>";
+  }
+	
+  else if (sessionStorage.getItem("howStart")==6){
 	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";}
+	"<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";
+  }
 	
   else if (sessionStorage.getItem("howStart")==7){
 	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
-	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";}
-	
-  else if ((dt.getDay()>5 && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) || (dt.getDay()==0 && sessionStorage.getItem("howStart")!=7)){
-  	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span class='color-green'>Week-end</span>";
-	}
+	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";
+  }
   
   else{
 	if (distance < 0 && end==false) {
@@ -154,15 +163,15 @@ xmlhttp.onreadystatechange = function () {
 		sessionStorage.setItem("howStart",720);
 		sessionStorage.setItem("txt","44 heures");
 		break;
-		case content.startsWith("Cong"):
+		case content.startsWith("En"):
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;
-		case content.startsWith("Ch"):
+		case content.startsWith("Chômage"):
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;
-		case content.startsWith("Rtt"):
+		case content.startsWith("Congé"):
 		sessionStorage.setItem("howStart",6);
 		sessionStorage.setItem("txt",content);
 		break;

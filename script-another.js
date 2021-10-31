@@ -7,13 +7,14 @@ var countDownDate;
 var debut=sessionStorage.getItem("howStart");
 var week_end;
 
+setcount();
+
 if(dt.getDay()>5 || dt.getDay()==0){
 	week_end=true;
 }
 else{
 	week_end=false;
 }
-setcount();
 // Update the count down every 1 second
 var x = setInterval(function() {
 

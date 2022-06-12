@@ -79,64 +79,65 @@ d=parseInt(new Date().getHours()+""+(10>new Date().getMinutes() ? "0" : "")+new 
 if (d<debut){
 	pause=true;
     dt = new Date();
-	dt.setHours(07);
-	if (debut==750){
-		dt.setMinutes(50);}
+	if (debut==800){
+		dt.setHours(08);
+		dt.setMinutes(00);}
 	else{
-		dt.setMinutes(20);}
+		dt.setHours(07);
+		dt.setMinutes(30);}
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if (d>=debut && d<1010){
+else if (d>=debut && d<1000){
 	pause=false;
     dt = new Date();
 	dt.setHours(10);
-	dt.setMinutes(10);
+	dt.setMinutes(00);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1010 && d<1025){
+else if(d>=1000 && d<1015){
 	pause=true;
 	dt = new Date();
 	dt.setHours(10);
-	dt.setMinutes(25);
+	dt.setMinutes(15);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1025 && d<1240){
+else if(d>=1015 && d<1230){
 	pause=false;
 	dt = new Date();
 	dt.setHours(12);
-	dt.setMinutes(40);
+	dt.setMinutes(30);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1240 && d<1310){
+else if(d>=1230 && d<1300){
 	pause=true;
 	dt = new Date();
 	dt.setHours(13);
-	dt.setMinutes(10);
+	dt.setMinutes(00);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1310 && d<1510){
+else if(d>=1300 && d<1445){
 	pause=false;
 	dt = new Date();
-	dt.setHours(15);
-	dt.setMinutes(10);
+	dt.setHours(14);
+	dt.setMinutes(45);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1510 && d<1525){
+else if(d>=1445 && d<1500){
 	pause=true;
 	dt = new Date();
 	dt.setHours(15);
-	dt.setMinutes(25);
+	dt.setMinutes(00);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1525){
+else if(d>=1500){
 	pause=false;
 	dt = new Date();
-	if(debut==750){
-		dt.getDay()==5 ? dt.setHours(15) : dt.setHours(16);
-		dt.setMinutes(50);}
-	else if (debut==720){
+	if(debut==800){
 		dt.getDay()==5 ? dt.setHours(16) : dt.setHours(17);
-		dt.setMinutes(20);}
+		dt.setMinutes(00);}
+	else if (debut==730){
+		dt.getDay()==5 ? dt.setHours(16) : dt.setHours(17);
+		dt.setMinutes(30);}
 	end=true;
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
@@ -157,11 +158,11 @@ xmlhttp.onreadystatechange = function () {
 	  
 	switch(true) {
 		case content.startsWith("39 heures"):
-		sessionStorage.setItem("howStart",750);
+		sessionStorage.setItem("howStart",800);
 		sessionStorage.setItem("txt","39 heures");
 		break;
 		case content.startsWith("44 heures"):
-		sessionStorage.setItem("howStart",720);
+		sessionStorage.setItem("howStart",730);
 		sessionStorage.setItem("txt","44 heures");
 		break;
 		case content.startsWith("En"):

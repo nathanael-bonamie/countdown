@@ -115,21 +115,21 @@ else if(d>=1200 && d<1230){
 	dt.setMinutes(30);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1230 && d<1445){
+else if(d>=1230 && d<1430){
 	pause=false;
+	dt = new Date();
+	dt.setHours(14);
+	dt.setMinutes(30);
+	dt.setSeconds(00);
+	countDownDate=dt.getTime();}
+else if(d>=1430 && d<1445){
+	pause=true;
 	dt = new Date();
 	dt.setHours(14);
 	dt.setMinutes(45);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1445 && d<1500){
-	pause=true;
-	dt = new Date();
-	dt.setHours(15);
-	dt.setMinutes(00);
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else if(d>=1500){
+else if(d>=1445){
 	pause=false;
 	dt = new Date();
 	if(debut==800){

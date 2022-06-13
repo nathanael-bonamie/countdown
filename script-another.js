@@ -87,35 +87,35 @@ if (d<debut){
 		dt.setMinutes(30);}
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if (d>=debut && d<1000){
+else if (d>=debut && d<945){
 	pause=false;
     dt = new Date();
-	dt.setHours(10);
+	dt.setHours(09);
+	dt.setMinutes(45);
+	dt.setSeconds(00);
+	countDownDate=dt.getTime();}
+else if(d>=945 && d<1000){
+	pause=true;
+	dt = new Date();
+	dt.setHours(09);
+	dt.setMinutes(45);
+	dt.setSeconds(00);
+	countDownDate=dt.getTime();}
+else if(d>=1000 && d<1200){
+	pause=false;
+	dt = new Date();
+	dt.setHours(12);
 	dt.setMinutes(00);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1000 && d<1015){
+else if(d>=1200 && d<1230){
 	pause=true;
-	dt = new Date();
-	dt.setHours(10);
-	dt.setMinutes(15);
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else if(d>=1015 && d<1230){
-	pause=false;
 	dt = new Date();
 	dt.setHours(12);
 	dt.setMinutes(30);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1230 && d<1300){
-	pause=true;
-	dt = new Date();
-	dt.setHours(13);
-	dt.setMinutes(00);
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else if(d>=1300 && d<1445){
+else if(d>=1230 && d<1445){
 	pause=false;
 	dt = new Date();
 	dt.setHours(14);

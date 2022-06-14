@@ -9,7 +9,7 @@ var week_end;
 
 setcount();
 
-document.getElementById("day").innerHTML= "<span class='color-orange'>"+date.getDay()+"</span><br>";
+document.getElementById("day").innerHTML= "<span class='color-orange'>un test</span>";
 
 if(dt.getDay()>5 || dt.getDay()==0){
 	week_end=true;

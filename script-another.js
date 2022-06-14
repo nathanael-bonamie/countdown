@@ -1,15 +1,18 @@
 var date = new Date();
 var end=false;
 var pause=false;
+const nm_mnth = ['Janv.','Fév.','Mars','Avr.','Mai','Juin','Juil.','Août','Sept.','Oct.','Nov.','Déc.'];
+const nm_day = ['Dim.','Lun.','Mar.','Mer.','Jeu.','Vend.','Sam.'];
 var dt;
 var d;
 var countDownDate;
 var debut=sessionStorage.getItem("howStart");
 var week_end;
+var num = nm_mnth[date.getMonth()];
+var jr = nm_day[date.getDay()];
+var j = jr+" "+date.getDate()+" "+num;
 
 setcount();
-
-document.getElementById("day").innerHTML= "<span class='color-orange'>un test</span>";
 
 if(dt.getDay()>5 || dt.getDay()==0){
 	week_end=true;
@@ -36,39 +39,47 @@ var x = setInterval(function() {
     
   // Output the result debut an element with id="demo"
   if (pause){
-	document.getElementById("demo").innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
+	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+(1>hours ? "" : hours + ":")+(10>minutes ? "0" : "") + minutes + ":" + (10>seconds ? "0" : "") + seconds+"</span>";}
   else{
-	document.getElementById("demo").innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
+	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	(1>hours ? "" : hours + ":")+(10>minutes ? "0" : "") + minutes + ":" + (10>seconds ? "0" : "") + seconds;}
     
   // affichage congés, chômage ou week end
   if (week_end){
-  	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+  	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
+	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>Week-end</span>";
   }
 	
   else if (sessionStorage.getItem("howStart")==6){
-	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
+	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";
   }
 	
   else if (sessionStorage.getItem("howStart")==7){
-	document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
+	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
 	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";
   }
   
   else{
 	if (distance < 0 && end==false) {
-		document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+		document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
+		"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 		"Reload";
 		setcount();
 	}
 	else if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) {
-		dt.getDay()>4 ? document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+		dt.getDay()>4 ? document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
+		"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 		"<span class='color-green'>Week-end</span>" : 
-		document.getElementById("demo").innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+		document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
+		"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 		"<span class='color-green'>Fin de journée</span>";
 	}
 	}

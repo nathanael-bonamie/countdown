@@ -97,8 +97,8 @@ else if (d>=debut && d<945){
 else if(d>=945 && d<1000){
 	pause=true;
 	dt = new Date();
-	dt.setHours(09);
-	dt.setMinutes(45);
+	dt.setHours(10);
+	dt.setMinutes(00);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
 else if(d>=1000 && d<1200){

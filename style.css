@@ -19,8 +19,11 @@ html {
 }
 
 body {
-        background-image: url('https://gifer.com/PK6'); 
-        background-size: cover;
+        background: url("https://github.com/nathanael-bonamie/countdown/blob/main/pexels-pixabay-45204.jpg");
+	background-attachment:fixed;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size: contain;
 	display:flex;
 	height:100%; 
 	margin:0; 

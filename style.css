@@ -20,6 +20,8 @@ html {
 }
 
 body {
+        background-image: url('https://gifer.com/PK6'); 
+        background-size: cover;
 	display:flex;
 	height:100%; 
 	margin:0; 

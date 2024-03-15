@@ -1,33 +1,31 @@
-p {
-  font-size: 9vw;
+body{
+	background-color : #444;
+}
+.container {
+	position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.center {
+	position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
 	text-align: center;
-	margin-bottom : auto;
-	margin-top : auto;
-	margin-left : "0px";
-	margin-right : "0px";
-	width: 100%;
-}
-
-.sanssautdeligne { 
-	white-space:nowrap; 
-}
-
-html {
+	font-size: 9vw;
 	font-family: Calibri;
 	font-weight: bold;
-	color: #FF0000;
-}
+	color: #FF0000;*/
+}	
 
-body {
-	background: url("https://raw.githubusercontent.com/nathanael-bonamie/countdown/main/imageedit_1_8488014821.png");
-	background-attachment:fixed;
-	background-position:center;
-	background-repeat:no-repeat;
-	background-size: contain;
-	display:flex;
-	height:100%; 
-	margin:0; 
-	padding:0; 
+video { 
+	width: 100%;
+	height: auto;
+	opacity: 0.7;
+
 }
 
 .color-green{
@@ -39,5 +37,5 @@ body {
 }
 
 .color-org{
-    color: #ff9900;
+    color: #ff7f00;
 }

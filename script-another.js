@@ -71,6 +71,10 @@ var x = setInterval(function() {
   
 }, 1000);
 
+function playAudio(url) {
+  new Audio(url).play();
+}
+
 function setcount(){
 
 d=parseInt(new Date().getHours()+""+(10>new Date().getMinutes() ? "0" : "")+new Date().getMinutes());

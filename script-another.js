@@ -104,7 +104,7 @@ xmlhttp.onreadystatechange = function () {
 	content=decodeURIComponent(escape(content));
 	  
 	switch(true) {
-		case content.startWith("Work"):
+		case content.startsWith("Work"):
 		sessionStorage.setItem("howStart",0);
 		sessionStorage.setItem("txt",content);
 		break;

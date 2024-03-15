@@ -6,7 +6,6 @@ const nm_day = ['Dim.','Lun.','Mar.','Mer.','Jeu.','Vend.','Sam.'];
 var dt;
 var d;
 var countDownDate;
-var debut=sessionStorage.getItem("howStart");
 var week_end;
 var num = nm_mnth[date.getMonth()];
 var jr = nm_day[date.getDay()];
@@ -31,56 +30,42 @@ var x = setInterval(function() {
   var s=t.getSeconds();
 
   var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
+  
   // Output the result debut an element with id="demo"
   if (pause){
-	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
-	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span class='color-green'>"+(1>hours ? "" : hours + ":")+(10>minutes ? "0" : "") + minutes + ":" + (10>seconds ? "0" : "") + seconds+"</span>";}
+	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	"<span><a href='tel:+336799929758' style='color:green'><img width='256' height='256' src='https://img.icons8.com/laces/256/000000/phone.png'/></a></span>";}
+  else if(dt.getDay()==1 || dt.getDay()==3 || dt.getDay()==5){
+	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	"<span><a href='tel:+33553879932' style='color:green'><img width='256' height='256' src='https://img.icons8.com/laces/256/000000/phone.png'/></a></span>";}
   else{
-	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
-	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	(1>hours ? "" : hours + ":")+(10>minutes ? "0" : "") + minutes + ":" + (10>seconds ? "0" : "") + seconds;}
+	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	"<span><a href='tel:+33553958939' style='color:green'><img width='256' height='256' src='https://img.icons8.com/laces/256/000000/phone.png'/></a></span>";}
     
   // affichage congés, chômage ou week end
   if (week_end){
-  	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
-	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+  	document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>Week-end</span>";
   }
 	
   else if (sessionStorage.getItem("howStart")==6){
-	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
-	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";
   }
 	
   else if (sessionStorage.getItem("howStart")==7){
-	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
-	"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+	document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 	"<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
 	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";
   }
   
   else{
-	if (distance < 0 && end==false) {
-		document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
-		"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-		"Reload";
-		setcount();
-	}
-	else if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) {
-		dt.getDay()>4 ? document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
-		"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+
+	if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) {
+		dt.getDay()>4 ? document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
 		"<span class='color-green'>Week-end</span>" : 
-		document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+
-		"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-		"<span class='color-green'>Fin de journée</span>";
+		document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
+		"<span class='color-green'>Fin de journ&eacutee</span>";
 	}
 	}
   
@@ -89,100 +74,38 @@ var x = setInterval(function() {
 function setcount(){
 
 d=parseInt(new Date().getHours()+""+(10>new Date().getMinutes() ? "0" : "")+new Date().getMinutes());
-if (d<debut){
+if (d<900){
 	pause=true;
-    dt = new Date();
-	if (debut==800){
-		dt.setHours(08);
-		dt.setMinutes(00);}
-	else{
-		dt.setHours(07);
-		dt.setMinutes(30);}
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else if (d>=debut && d<945){
-	pause=false;
     dt = new Date();
 	dt.setHours(09);
-	dt.setMinutes(45);
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else if(d>=945 && d<1000){
-	pause=true;
-	dt = new Date();
-	dt.setHours(10);
 	dt.setMinutes(00);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1000 && d<1200){
+else if (d>=900 && d<=1600){
 	pause=false;
-	dt = new Date();
-	dt.setHours(12);
+    dt = new Date();
+	dt.setHours(16);
 	dt.setMinutes(00);
 	dt.setSeconds(00);
 	countDownDate=dt.getTime();}
-else if(d>=1200 && d<1230){
+else{
 	pause=true;
 	dt = new Date();
-	dt.setHours(12);
-	dt.setMinutes(30);
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else if(d>=1230 && d<1430){
-	pause=false;
-	dt = new Date();
-	dt.setHours(14);
-	dt.setMinutes(30);
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else if(d>=1430 && d<1445){
-	pause=true;
-	dt = new Date();
-	dt.setHours(14);
-	dt.setMinutes(45);
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else if(d>=1445){
-	pause=false;
-	dt = new Date();
-	if(debut==800){
-		dt.getDay()==5 ? dt.setHours(16) : dt.setHours(17);
-		dt.setMinutes(00);}
-	else if (debut==730){
-		dt.getDay()==5 ? dt.setHours(16) : dt.setHours(17);
-		dt.setMinutes(30);}
+	countDownDate=0;
 	end=true;
-	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
-else{countDownDate=0;
-}
+	}
 }
 
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
-  
-    //let data = JSON.parse(this.responseText).feed.entry;
-	//var sha=JSON.parse(this.responseText).sha;
-	//sessionStorage.setItem("sha",sha);
 	
 	var content=atob(JSON.parse(this.responseText).content);	//fixedstring = decodeURIComponent(escape(utfstring));
 	content=decodeURIComponent(escape(content));
 	  
 	switch(true) {
-		case content.startsWith("39 heures"):
-		sessionStorage.setItem("howStart",800);
-		sessionStorage.setItem("txt","39 heures");
-		break;
-		case content.startsWith("44 heures"):
-		sessionStorage.setItem("howStart",730);
-		sessionStorage.setItem("txt","44 heures");
-		break;
+
 		case content.startsWith("En"):
-		sessionStorage.setItem("howStart",7);
-		sessionStorage.setItem("txt",content);
-		break;
-		case content.startsWith("Chômage"):
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;

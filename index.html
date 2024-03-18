@@ -6,18 +6,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 		<META HTTP-EQUIV="Expires" CONTENT="-1">
-		<script src="https://nathanael-bonamie.github.io/countdown/script-another.js"></script>
-		<link rel="shortcut icon" href="https://nathanael-bonamie.github.io/new/favicon.ico" />
-	<link rel="stylesheet" href="https://nathanael-bonamie.github.io/countdown/style.css"/>
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
+		<script defer src="./script.js"></script>
+		<link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
 <div class="container">
- 	<video autoplay muted id="myVideo" class="container">	
-		<source src="https://github.com/nathanael-bonamie/new/raw/main/lastPK6.mp4"
-			type="video/mp4">
-	</video>
-  <div class="center" id="demo" 
-			onclick="playAudio('https://github.com/nathanael-bonamie/new/raw/main/kv-frame.mp3')"></div>
+		<div class="center"
+			 style="margin-top:10px"
+			 id="theDay"
+			 onclick="playAudio('https://github.com/nathanael-bonamie/new/raw/main/kv-frame.mp3')">--</div>
+		
+		<div class="center" style="margin-top:10px" 
+			id="time">--</div>
+				
+		<div class="center" style="margin-top:20px">
+		
+			<video autoplay muted id="myVideo" class="container">	
+				<source src="https://github.com/nathanael-bonamie/new/raw/main/lastPK6.mp4"
+					type="video/mp4">
+			</video>
+		</div>
+		<div class="center" style="margin-top:60px" 
+			id="logo">--</div>
 </div>
 
 </body>

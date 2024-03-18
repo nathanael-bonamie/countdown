@@ -10,6 +10,11 @@ var week_end;
 var num = nm_mnth[date.getMonth()];
 var jr = nm_day[date.getDay()];
 var j = jr+" "+date.getDate()+" "+num;
+var url = './phone.png'
+var size = 64;
+var affDt = document.getElementById("theDay");
+var affTime = document.getElementById("time");
+var affLogo = document.getElementById("logo");
 
 setcount();
 
@@ -20,6 +25,10 @@ else{
 	week_end=false;
 }
 // Update the count down every 1 second
+
+affDt.innerHTML = "<span class='color-org'>" + j + "</span>";
+affLogo.innerHTML = "<span><a href='tel:0679929758' style='color:green'><img width='64' height='64' src='./phone.png'/></a></span>";
+
 var x = setInterval(function() {
 
   // Get today's date and time
@@ -33,39 +42,33 @@ var x = setInterval(function() {
   
   // Output the result debut an element with id="demo"
   if (pause){
-	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span><a href='tel:0679929758' style='color:green'><img width='64' height='64' src='https://img.icons8.com/laces/64/000000/phone.png'/></a></span>";}
+	affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+ s + "</span>";
+	}
   else if(dt.getDay()==1 || dt.getDay()==3 || dt.getDay()==5){
-	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span><a href='tel:0553879932' style='color:green'><img width='64' height='64' src='https://img.icons8.com/laces/64/000000/phone.png'/></a></span>";}
+	affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+ s + "</span>";
+	}
   else{
-	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span><a href='tel:0553958939' style='color:green'><img width='64' height='64' src='https://img.icons8.com/laces/64/000000/phone.png'/></a></span>";}
+	affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+ s + "</span>";
+	}
     
   // affichage congés, chômage ou week end
   if (week_end){
-  	document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span class='color-green'>Week-end</span>";
+  	affTime.innerHTML ="</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
   }
 	
   else if (sessionStorage.getItem("howStart")==6){
-	document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";
+	affTime.innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
   }
 	
   else if (sessionStorage.getItem("howStart")==7){
-	document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
-	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";
+	affTime.innerHTML = "</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
   }
   
   else{
 
 	if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) {
-		dt.getDay()>4 ? document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-		"<span class='color-green'>Week-end</span>" : 
-		document.getElementById("demo").innerHTML ="<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-		"<span class='color-green'>Fin de journ&eacutee</span>";
+		dt.getDay()>4 ? affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>" : 
+		affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
 	}
 	}
   
@@ -98,8 +101,7 @@ else{
 	countDownDate=0;
 	end=true;
 	}
-}
-
+	
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
@@ -108,10 +110,7 @@ xmlhttp.onreadystatechange = function () {
 	content=decodeURIComponent(escape(content));
 	  
 	switch(true) {
-		case content.startsWith("Work"):
-		sessionStorage.setItem("howStart",0);
-		sessionStorage.setItem("txt",content);
-		break;
+
 		case content.startsWith("En"):
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
@@ -129,3 +128,4 @@ xmlhttp.open(
   "https://api.github.com/repos/nathanael-bonamie/countdown/contents/how.txt",
   false);
 xmlhttp.send();
+}

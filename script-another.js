@@ -34,13 +34,13 @@ var x = setInterval(function() {
   // Output the result debut an element with id="demo"
   if (pause){
 	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span><a href='tel:+336799929758' style='color:green'><img width='256' height='256' src='https://img.icons8.com/laces/256/000000/phone.png'/></a></span>";}
+	"<span><a href='tel:0679929758' style='color:green'><img width='64' height='64' src='https://img.icons8.com/laces/64/000000/phone.png'/></a></span>";}
   else if(dt.getDay()==1 || dt.getDay()==3 || dt.getDay()==5){
 	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span><a href='tel:+33553879932' style='color:green'><img width='256' height='256' src='https://img.icons8.com/laces/256/000000/phone.png'/></a></span>";}
+	"<span><a href='tel:0553879932' style='color:green'><img width='64' height='64' src='https://img.icons8.com/laces/64/000000/phone.png'/></a></span>";}
   else{
 	document.getElementById("demo").innerHTML = "<span class='color-org'>"+j+"</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span><br>"+
-	"<span><a href='tel:+33553958939' style='color:green'><img width='256' height='256' src='https://img.icons8.com/laces/256/000000/phone.png'/></a></span>";}
+	"<span><a href='tel:0553958939' style='color:green'><img width='64' height='64' src='https://img.icons8.com/laces/64/000000/phone.png'/></a></span>";}
     
   // affichage congés, chômage ou week end
   if (week_end){

@@ -52,28 +52,24 @@ var x = setInterval(function() {
     
   // affichage congés, chômage ou week end
   if (week_end){
-  	affTime.innerHTML ="</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
+  	affTime.innerHTML = "</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
+	affLogo.innerHTML = "Week-end";
   }
-	
+	//congés
   else if (sessionStorage.getItem("howStart")==6){
-	affTime.innerHTML ="<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
+	affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
+	affLogo.innerHTML = "<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";
   }
-	
+	//vacances
   else if (sessionStorage.getItem("howStart")==7){
 	affTime.innerHTML = "</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
+	affLogo.innerHTML = "<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
+	+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";
   }
   
-  else{
-	
-	if (distance < 0 && end==false) {
-		setcount();
-	}
-
-	else if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) {
-		dt.getDay()>4 ? affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>" : 
-		affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
-	}
-	}
+  if(distance < 0){
+	setcount();
+  }
   
 }, 1000);
 
@@ -93,7 +89,7 @@ if (d<900){
 	countDownDate=dt.getTime();
 	affLogo.innerHTML = "<span><a href='tel:0679929758' style='color:green'><img width='64' height='64' src='./phone.png'/></a></span>";
 	}
-else if (d>=900 && d<=1600){
+else if (d>=900 && d<1600){
 	pause=false;
     dt = new Date();
 	dt.setHours(16);
@@ -121,11 +117,17 @@ xmlhttp.onreadystatechange = function () {
 	content=decodeURIComponent(escape(content));
 	  
 	switch(true) {
-
+		
+		case content.startsWith("Work"):
+		sessionStorage.setItem("howStart",1);
+		sessionStorage.setItem("txt",content);
+		break;
+		
 		case content.startsWith("En"):
 		sessionStorage.setItem("howStart",7);
 		sessionStorage.setItem("txt",content);
 		break;
+		
 		case content.startsWith("Congé"):
 		sessionStorage.setItem("howStart",6);
 		sessionStorage.setItem("txt",content);

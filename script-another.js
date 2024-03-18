@@ -27,7 +27,6 @@ else{
 // Update the count down every 1 second
 
 affDt.innerHTML = "<span class='color-org'>" + j + "</span>";
-affLogo.innerHTML = "<span><a href='tel:0679929758' style='color:green'><img width='64' height='64' src='./phone.png'/></a></span>";
 
 var x = setInterval(function() {
 
@@ -65,8 +64,12 @@ var x = setInterval(function() {
   }
   
   else{
+	
+	if (distance < 0 && end==false) {
+		setcount();
+	}
 
-	if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) {
+	else if (distance < 0 && end==true && sessionStorage.getItem("howStart")!=7 && sessionStorage.getItem("howStart")!=6) {
 		dt.getDay()>4 ? affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>" : 
 		affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
 	}
@@ -87,19 +90,27 @@ if (d<900){
 	dt.setHours(09);
 	dt.setMinutes(00);
 	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
+	countDownDate=dt.getTime();
+	affLogo.innerHTML = "<span><a href='tel:0679929758' style='color:green'><img width='64' height='64' src='./phone.png'/></a></span>";
+	}
 else if (d>=900 && d<=1600){
 	pause=false;
     dt = new Date();
 	dt.setHours(16);
 	dt.setMinutes(00);
 	dt.setSeconds(00);
-	countDownDate=dt.getTime();}
+	countDownDate=dt.getTime();
+	if(dt.getDay()==1 || dt.getDay()==3 || dt.getDay()==5)
+		affLogo.innerHTML = "<span><a href='tel:0553879932' style='color:green'><img width='64' height='64' src='./phone.png'/></a></span>";
+	else
+		affLogo.innerHTML = "<span><a href='tel:0553958939' style='color:green'><img width='64' height='64' src='./phone.png'/></a></span>";
+	}
 else{
 	pause=true;
 	dt = new Date();
 	countDownDate=0;
 	end=true;
+	affLogo.innerHTML = "<span><a href='tel:0679929758' style='color:green'><img width='64' height='64' src='./phone.png'/></a></span>";
 	}
 	
 let xmlhttp = new XMLHttpRequest();

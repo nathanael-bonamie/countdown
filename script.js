@@ -52,7 +52,7 @@ var x = setInterval(function() {
     
   // affichage congés, chômage ou week end
   if (week_end){
-  	affTime.innerHTML = "</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
+  	affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
 	affLogo.innerHTML = "Week-end";
   }
 	//congés
@@ -62,7 +62,7 @@ var x = setInterval(function() {
   }
 	//vacances
   else if (sessionStorage.getItem("howStart")==7){
-	affTime.innerHTML = "</span><br>"+"<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
+	affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
 	affLogo.innerHTML = "<span class='color-green'>"+sessionStorage.getItem("txt").substring(0,sessionStorage.getItem("txt").indexOf("reprise")+5)
 	+"<br>"+sessionStorage.getItem("txt").substring(sessionStorage.getItem("txt").indexOf("reprise")+5)+"</span>";
   }

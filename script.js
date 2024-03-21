@@ -64,7 +64,7 @@ var x = setInterval(function() {
   else if (sessionStorage.getItem("howStart")==7){
 	affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
 	affLogo.innerHTML = "<span class='color-green'>"+sessionStorage.getItem("txt").substring(0, 11)
-	+"<br>"+sessionStorage.getItem("txt").substring(7)+"</span>";
+	+"<br>"+sessionStorage.getItem("txt").substring(11)+"</span>";
   }
   
   if(distance < 0){

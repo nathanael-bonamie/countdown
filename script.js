@@ -51,9 +51,9 @@ var x = setInterval(function() {
 	}
     
   // affichage congés, chômage ou week end
-  if (week_end){
+  if (week_end && sessionStorage.getItem("howStart")==1){
   	affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+s+"</span>";
-	affLogo.innerHTML = "Week-end";
+	affLogo.innerHTML = "<span class='color-green'>"+"Week-end"+"</span>";
   }
 	//congés
   else if (sessionStorage.getItem("howStart")==6){

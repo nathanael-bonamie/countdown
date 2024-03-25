@@ -17,7 +17,7 @@ var affTime = document.getElementById("time");
 var affLogo = document.getElementById("logo");
 
 setcount();
-
+dt = newDate();
 if(dt.getDay()>5 || dt.getDay()==0){
 	week_end=true;
 }
@@ -117,11 +117,13 @@ if(!week_end && sessionStorage.getItem("howStart")==1){
 		}
 	}
 else if (week_end && sessionStorage.getItem("howStart")==1){
-	affLogo.innerHTML = "<span class='color-green'>"+"Week-end"+"</span>";}
+	affLogo.innerHTML = "<span class='color-green'>"+"Week-end"+"</span>";
+}
 else if (sessionStorage.getItem("howStart")==6){
 	affLogo.innerHTML = "<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";
 }
 else if (sessionStorage.getItem("howStart")==7){
 	affLogo.innerHTML = "<span class='color-green'>"+sessionStorage.getItem("txt").substring(0, 11)
-	+"<br>"+sessionStorage.getItem("txt").substring(11)+"</span>";}
+	+"<br>"+sessionStorage.getItem("txt").substring(11)+"</span>";
+}
 }

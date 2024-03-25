@@ -17,7 +17,7 @@ var affTime = document.getElementById("time");
 var affLogo = document.getElementById("logo");
 
 setcount();
-dt = newDate();
+dt = new Date();
 if(dt.getDay()>5 || dt.getDay()==0){
 	week_end=true;
 }

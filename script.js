@@ -113,7 +113,7 @@ if(!week_end && sessionStorage.getItem("howStart")==1){
 		}
 	}
 else if (week_end && sessionStorage.getItem("howStart")==1){
-	affLogo.innerHTML = "<span class='color-green'>"+"Week-end"+"</span>";
+	affLogo.innerHTML = "<span class='color-green'>Week-end</span>";
 }
 else if (sessionStorage.getItem("howStart")==6){
 	affLogo.innerHTML = "<span class='color-green'>"+sessionStorage.getItem("txt")+"</span>";

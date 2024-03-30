@@ -40,10 +40,6 @@ var x = setInterval(function() {
   var distance = countDownDate - now;
   
   affTime.innerHTML = "<span class='color-blue'>"+(h<10 ? "0":"")+h+":"+(m<10 ? "0":"")+m+":"+(s<10 ? "0":"")+ s + "</span>";
-
-  if(distance < 0){
-	setcount();
-  }
   
 }, 1000);
 

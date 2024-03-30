@@ -15,8 +15,6 @@ var size = 64;
 var affDt = document.getElementById("theDay");
 var affTime = document.getElementById("time");
 var affLogo = document.getElementById("logo");
-
-setcount();
 dt = new Date();
 if(dt.getDay()>5 || dt.getDay()==0){
 	week_end=true;
@@ -24,6 +22,9 @@ if(dt.getDay()>5 || dt.getDay()==0){
 else{
 	week_end=false;
 }
+
+setcount();
+
 // Update the count down every 1 second
 
 affDt.innerHTML = "<span class='color-org'>" + j + "</span>";
